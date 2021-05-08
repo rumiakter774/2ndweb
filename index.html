@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title></title>
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<h1>Exam result</h1>
+	<a class="link" href="www.result.com"></a>
+	<p>Here is the result of your exam</p>
+	<ul>
+		<li class="enlist">English: <span class="enmark">100</span>, Grage is: <span class="setmark"></span></li>
+		<li class="math"></li>
+	</ul>
+
+	<form>
+		<input type="text" class="engrade">
+	</form>
+	<button class="cng">Change</button>
+	<br><br>
+	<button class="enbutton">Get EN mark</button>
+	<button class="listbutton">Get list element</button>
+	<button class="valuebutton">Get input value</button>
+	<button class="linkbutton">Get attribut</button>
+
+	<br>
+	<br>
+	<button class="setenbutton">Set EN mark</button>
+	<button class="setlistbutton">Set list element</button>
+	<button class="setvaluebutton">Set input value</button>
+	<button class="setlinkbutton">Set attribut</button>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".enbutton").click(function(){
+			alert('English Mark is: ' + $(".enmark").text() );
+		});
+
+		$(".listbutton").click(function(){
+			alert('Whole list: ' + $('.enlist').html());
+		})
+
+		$(".valuebutton").click(function(){
+			alert('English Grage is: ' + $ ('.engrade').val());
+		})
+
+		$(".linkbutton").click(function(){
+			alert('wibeside : ' + $ ('.link').attr("href"));
+		})
+
+		$(".setenbutton").click(function(){
+			$(".enmark").text("80")
+		});
+
+		$(".setlistbutton").click(function(){
+			$(".math").html("math mark:89")
+		});
+
+		$(".setvaluebutton").click(function(){
+			$(".engrade").val("F");
+		})
+
+		$(".setlinkbutton").click(function(){
+			$(".link").attr("href", "https://www.golla.com");
+		})
+
+		$(".cng").click(function(){
+     let grade = $(".engrade").val();
+			$(".setmark").text(grade);
+			$(".engrade").val(" ");      
+    });
+
+	})
+</script>
+</body>
+</html>
